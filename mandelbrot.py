@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw
 import random
 import math
 import PIL.Image
-
+# from mpmath import *
 RMAX = 2.0
 RMIN = -2.0
 IMAX = 2.0
@@ -11,8 +11,8 @@ length = 100
 width = 100
 a = .5
 b = .5
-changeSize = raw_input("Do you want to change the size of the image, the default is 100 by 100? (True or False) ")
-if (changeSize):
+changeSize = raw_input("Do you want to change the size of the image, the default is 100 by 100? ")
+if (changeSize == "yes" or changeSize == "Yes"):
     length = int(raw_input("What do you want the length to be? "))
     width = int(raw_input("What do you want the width to be? "))
 pixel = complex(a, b)
@@ -36,11 +36,10 @@ def intoAnEquation():
                if abs(z) > 2:
                    redvalue = 255/iteration
                    greenvalue = 80
-                   bluevalue = 1*iteration
+                   bluevalue = 100*iteration
                    img.putpixel((col, row), (redvalue, greenvalue, bluevalue))
                    break
 
    img.show()
 
 intoAnEquation()
-
